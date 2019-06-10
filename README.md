@@ -96,4 +96,4 @@ Below are the properties that can be specified in the JSON file for an asset.  E
 
 
 ## LabVIEW Example
-[AssetCreationDemoApplication]() is a LabVIEW example that illustrates how to add additional 3rd party assets to a test system. This example requires the SystemLink Client to be installed and the client to have been added and approved to a SystemLink Server.  After the application has run it may take up to 5 minutes for the change to be reflected on the server.
+[AssetCreationDemoApplication](https://github.com/joshuaprewitt/systemlink-asset-management-api/tree/master/AssetCreationDemoApplication) is a LabVIEW example that illustrates how to add additional 3rd party assets to a test system. This example requires the SystemLink Client to be installed and the client to have been added and approved to a SystemLink Server.  After the application has run it may take up to 5 minutes for the change to be reflected on the server.
