@@ -3,12 +3,12 @@ The SystemLink Asset Management service supports tracking NI and 3rd party asset
 
 The primary mechanism to added additional assets is to define one or more assets in one or more JSON files (*.json) on the tester under ````C:\ProgramData\National Instruments\Skyline\Data\Assets\UserDefined\```` on Windows or ````/etc/natinst/niskyline/Data/Assets/UserDefined```` on NI Linux RT.
 
-Below are the properties that can be specified in the JSON file for an asset.  Every asset must contain the **bold** properties to uniquely identify them.
+Below are the properties that can be specified in the JSON file for an asset. Every asset must contain the **bold** properties to uniquely identify them.
 * **SerialNumber** - string
-* **ModelName** - string
-* **ModelNumber** - integer
-* **VendorName** - string
-* **VendorNumber** - integer
+* **ModelName\*** - string
+* **ModelNumber\*** - integer
+* **VendorName\*** - string
+* **VendorNumber\*** - integer
 * BusType - string
     * Possible values: "BuiltInSystem" (default if not specified or specified with an invalid value), "PciPxi", "Usb", "Gpib", "Vxi", "Serial", "TcpIp", "cRio", "Scxi", "cDaq", "SwitchBlock", "Scc", "FireWire", "Accessory", "Can", "SwitchBlockDevice"
 * AssetClass - string
@@ -38,6 +38,7 @@ Below are the properties that can be specified in the JSON file for an asset.  E
 * ExternalCalibrationOperatorDisplayName - string
 * ExternalCalibrationOperatorUserId - string
  
+\* At least one of **ModelName** or **ModelNumber** properties should be specified. At least one of **VendorName** or **VendorNumber** properties should be specified. Further updates to your already stored 3rd party assets will be made only if the same set of Model and Vendor properties will be saved in the JSON file.
 
 ## Asset JSON Schema
 ````json
