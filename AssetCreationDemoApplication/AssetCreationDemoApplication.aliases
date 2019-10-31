@@ -2,5 +2,5 @@
 APM-NI-cRIO-9047 = "10.113.1.162"
 
 [My Computer]
-My Computer = "169.254.101.193"
+My Computer = "192.168.137.1"
 
