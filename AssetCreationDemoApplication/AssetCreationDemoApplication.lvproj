@@ -16,7 +16,7 @@
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
 		<Item Name="Example" Type="Folder">
 			<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
-			<Item Name="Utilization.vi" Type="VI" URL="../Utilization.vi"/>
+			<Item Name="Utilization Test.vi" Type="VI" URL="../Utilization Test.vi"/>
 		</Item>
 		<Item Name="Types" Type="Folder">
 			<Item Name="Asset External Calibration.lvclass" Type="LVClass" URL="../Asset External Calibration/Asset External Calibration.lvclass"/>
