@@ -1,7 +1,9 @@
 # SystemLink Asset Management API
 The SystemLink Asset Management service supports tracking NI and 3rd party assets (devices under test, test fixtures, assets not discovered by MAX).  Some 3rd party assets like GPIB, USB-TMC, and LXI instruments are automatically discovered by NI-VISA, but you can use the SystemLink Asset Management API to programmatically add additional assets that are not automatically discovered.  In addition, the API can be used to add additional information like calibration history to existing 3rd party assets.
 
-The primary mechanism to added additional assets is to define one or more assets in one or more JSON files (*.json) on the tester under ````C:\ProgramData\National Instruments\Skyline\Data\Assets\UserDefined\```` on Windows or ````/etc/natinst/niskyline/Data/Assets/UserDefined```` on NI Linux RT.  As an example, copy the myAssets.json file from this project to ````C:\ProgramData\National Instruments\Skyline\Data\Assets\UserDefined```` and using the Windows Service restart the NI Salt Minion service.  Once the target reconnects to the SystemLink Server you should see two new assets show up in the Asset Manager application.  Changes to the myAssets.json file should be reflected on the server on a 5 minute interval or anytime the NI Salt Minion service is restarted.
+The primary mechanism to added additional assets is to define one or more assets in one or more JSON files (*.json) on the tester under ````C:\ProgramData\National Instruments\Skyline\Data\Assets\UserDefined\```` on Windows or ````/etc/natinst/niskyline/Data/Assets/UserDefined```` on NI Linux RT.  
+
+As an example, copy the myAssets.json file from this project to ````C:\ProgramData\National Instruments\Skyline\Data\Assets\UserDefined```` and using the Windows Service restart the NI Salt Minion service.  Once the target reconnects to the SystemLink Server you should see two new assets show up in the Asset Manager application.  Changes to the myAssets.json file should be reflected on the server on a 5 minute interval or anytime the NI Salt Minion service is restarted.
 
 Below are the properties that can be specified in the JSON file for an asset. Every asset must contain the **bold** properties to uniquely identify them.
 * **serialNumber** - string
@@ -41,7 +43,7 @@ Below are the properties that can be specified in the JSON file for an asset. Ev
         * displayName - string
         * operatorUserId - string
  
-\* At least one of **ModelName** or **ModelNumber** properties should be specified. At least one of **VendorName** or **VendorNumber** properties should be specified. Further updates to your already stored 3rd party assets will be made only if the same set of Model and Vendor properties will be saved in the JSON file.
+At least one of **ModelName** or **ModelNumber** properties should be specified. At least one of **VendorName** or **VendorNumber** properties should be specified. Further updates to your already stored 3rd party assets will be made only if the same set of Model and Vendor properties will be saved in the JSON file.
 
 ## Asset JSON Schema
 ````json
