@@ -1,7 +1,7 @@
 # SystemLink Asset Management API
 The SystemLink Asset Management service supports tracking NI and 3rd party assets (devices under test, test fixtures, assets not discovered by MAX).  Some 3rd party assets like GPIB, USB-TMC, and LXI instruments are automatically discovered by NI-VISA, but you can use the SystemLink Asset Management API to programmatically add additional assets that are not automatically discovered.  In addition, the API can be used to add additional information like calibration history to existing 3rd party assets.
 
-The primary mechanism to added additional assets is to define one or more assets in one or more JSON files (*.json) on the tester under ````C:\ProgramData\National Instruments\Skyline\Data\Assets\UserDefined\```` on Windows or ````/etc/natinst/niskyline/Data/Assets/UserDefined```` on NI Linux RT.
+The primary mechanism to added additional assets is to define one or more assets in one or more JSON files (*.json) on the tester under ````C:\ProgramData\National Instruments\Skyline\Data\Assets\UserDefined\```` on Windows or ````/etc/natinst/niskyline/Data/Assets/UserDefined```` on NI Linux RT.  As an example, copy the myAssets.json file from this project to ````C:\ProgramData\National Instruments\Skyline\Data\Assets\UserDefined```` and using the Windows Service restart the NI Salt Minion service.  Once the target reconnects to the SystemLink Server you should see two new assets show up in the Asset Manager application.  Changes to the myAssets.json file should be reflected on the server on a 5 minute interval or anytime the NI Salt Minion service is restarted.
 
 Below are the properties that can be specified in the JSON file for an asset. Every asset must contain the **bold** properties to uniquely identify them.
 * **serialNumber** - string
@@ -48,23 +48,18 @@ Below are the properties that can be specified in the JSON file for an asset. Ev
 {
     "assets": [
         {
-            "serialNumber": "01BB877A",
-            "modelName": "Acme Asset",
-            "modelNumber": 1949942980,
+            "serialNumber": "12345",
+            "modelName": "Virtual Thermal Asset",
+            "modelNumber": 12345678,
             "vendorName": "Acme",
-            "vendorNumber": 123456789,
-            "busType": "Usb",
+            "vendorNumber": 12345,
+            "busType": "TCP",
             "assetClass": "Asset",
-            "assetName": "Asset 123",
+            "assetName": "Virtual Thermal Asset 1",
             "firmwareVersion": "1.0A",
             "hardwareVersion": "1.0.12",
             "supportsSelfCalibration": true,
             "supportsExternalCalibration": true,
-            "location": {
-                "slotNumber": 2,
-                "parent": "My Parent",
-                "resourceUri": "01BB877A/123456789/2"
-            },
             "selfCalibration": {
                 "isLimited": false,
                 "date": "2010-07-10T13:06:18Z",
@@ -88,11 +83,14 @@ Below are the properties that can be specified in the JSON file for an asset. Ev
         {
             "serialNumber": "01BB877B",
             "modelName": "Battery Test Fixture",
-            "modelNumber": 1949942981,
+            "modelNumber": 19499429,
             "vendorName": "Acme",
-            "vendorNumber": 123456789,
+            "vendorNumber": 1234569,
             "assetClass": "Fixture",
-            "assetName": "Fixture 123"
+            "assetName": "Fixture 1234",
+			"location": {
+				"slotNumber": 1
+			}
         }
     ]
 }

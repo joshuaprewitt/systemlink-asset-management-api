@@ -1,0 +1,49 @@
+{
+    "assets": [
+        {
+            "serialNumber": "12345",
+            "modelName": "Virtual Thermal Asset",
+            "modelNumber": 12345678,
+            "vendorName": "Acme",
+            "vendorNumber": 12345,
+            "busType": "TCP",
+            "assetClass": "Asset",
+            "assetName": "Virtual Thermal Asset 1",
+            "firmwareVersion": "1.0A",
+            "hardwareVersion": "1.0.12",
+            "supportsSelfCalibration": true,
+            "supportsExternalCalibration": true,
+            "selfCalibration": {
+                "isLimited": false,
+                "date": "2010-07-10T13:06:18Z",
+                "operator": {
+                    "displayName": "John Doe",
+                    "userId": "nijohndoe"
+                }
+            },
+            "externalCalibration": {
+                "isLimited": false,
+                "date": "2014-04-05T13:55:27Z",
+                "comments": "First Calibration",
+                "checksum": "",
+                "recommendedInterval": 24,
+                "operator": {
+                    "displayName": "John Doe",
+                    "userId": "nijohndoe"
+                }
+            }
+        },
+        {
+            "serialNumber": "01BB877B",
+            "modelName": "Battery Test Fixture",
+            "modelNumber": 19499429,
+            "vendorName": "Acme",
+            "vendorNumber": 1234569,
+            "assetClass": "Fixture",
+            "assetName": "Fixture 1234",
+			"location": {
+				"slotNumber": 1
+			}
+        }
+    ]
+}
