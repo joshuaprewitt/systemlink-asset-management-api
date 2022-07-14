@@ -85,14 +85,9 @@ At least one of **ModelName** or **ModelNumber** properties should be specified.
         {
             "serialNumber": "01BB877B",
             "modelName": "Battery Test Fixture",
-            "modelNumber": 19499429,
             "vendorName": "Acme",
-            "vendorNumber": 1234569,
             "assetClass": "Fixture",
-            "assetName": "Fixture 1234",
-			"location": {
-				"slotNumber": 1
-			}
+            "assetName": "Fixture 1234"
         }
     ]
 }
