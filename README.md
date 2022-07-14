@@ -62,6 +62,11 @@ At least one of **ModelName** or **ModelNumber** properties should be specified.
             "hardwareVersion": "1.0.12",
             "supportsSelfCalibration": true,
             "supportsExternalCalibration": true,
+            "location":
+            {
+                "parent": "Fixture 1234",
+                "slotNumber": 1
+            },
             "selfCalibration": {
                 "isLimited": false,
                 "date": "2010-07-10T13:06:18Z",
